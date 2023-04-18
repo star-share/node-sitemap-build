@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import { routes } from './route';
+import { routes } from './route_path';
+import TS from "./ts.tsx"
 
 function App() {
   console.log("routes", routes);
@@ -19,6 +20,7 @@ function App() {
         >
           Learn React
         </a>
+        <TS></TS>
       </header>
     </div>
   );
