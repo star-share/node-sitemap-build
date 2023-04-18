@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import { routes } from './route';
 
 function App() {
+  console.log("routes", routes);
   return (
     <div className="App">
       <header className="App-header">
