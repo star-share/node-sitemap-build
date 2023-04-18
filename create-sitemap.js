@@ -8,16 +8,16 @@ const sitemap = new SitemapStream({ hostname: "http://www.baidu.com" });
 const writeStream = createWriteStream("./public/sitemap.xml");
 sitemap.pipe(writeStream);
 
-const { routes } = require("./src/route");
+const { routes } = require("./src/route_path");
 
-routes.forEach(i=>{
-    sitemap.write({
-      url: i.path,
-      changefreq: i.changefreq,
-      priority: i.priority,
-      lastmod: i.lastmod,
-    });
-})
+Object.values(routes).forEach((i) => {
+  sitemap.write({
+    url: i.path,
+    changefreq: i.changefreq,
+    priority: i.priority,
+    lastmod: i.lastmod,
+  });
+});
 
 sitemap.write({ url: "/page-1/", changefreq: "daily", priority: 0.3 });
 sitemap.write({ url: "/page-3/", changefreq: "daily", priority: 0.3 });
